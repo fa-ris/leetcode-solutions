@@ -4,6 +4,9 @@ class Solution {
         for (int i = 0; i < nums.length; i++) {
             list.add(index[i], nums[i]);
         }
-        return list.stream().mapToInt(Integer::intValue).toArray();
+        for (int i = 0; i < nums.length; i++) {
+            index[i] = list.get(i);
+        }
+        return index;
     }
 }
