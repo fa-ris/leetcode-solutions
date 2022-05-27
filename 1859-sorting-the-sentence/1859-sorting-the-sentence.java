@@ -5,12 +5,11 @@ class Solution {
         int digit = Integer.MIN_VALUE;
         for (int i = s.length() - 1; i >= 0; i--) {
             if (Character.isDigit(s.charAt(i))) {
-                e = i - 1;
+                e = i;
                 digit = Integer.valueOf(s.charAt(i));
             } else if (s.charAt(i) == ' ' || i == 0) {
                 start = i;
-                map.put(digit, s.substring(start, e + 1));
-                System.out.println(s.substring(start, e + 1));
+                map.put(digit, s.substring(start, e));
             }
         }
         s = new String("");
