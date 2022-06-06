@@ -6,15 +6,13 @@ class Solution {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(Integer.valueOf(nums[i]))) {
-                map.replace(Integer.valueOf(nums[i]), Integer.valueOf(map.get(nums[i]) + 1));
+                map.remove(Integer.valueOf(nums[i]));
             } else {
                 map.put(Integer.valueOf(nums[i]), Integer.valueOf(1));
             }
         }
         for (Integer key : map.keySet()) {
-            if (map.get(key).equals(Integer.valueOf(1))) {
-                return Integer.parseInt(Integer.toString(key));
-            }
+            return key;
         }
         return -1;
     }
