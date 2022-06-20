@@ -17,9 +17,9 @@ class Solution {
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null) {
             return false;
-        } else if (root.right == null && root.left == null && root.val == targetSum) {
+        } else if (root.right == null && root.left == null && root.val == targetSum) { // leaf condition
             return true;
         }
-        return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
+        return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val); // only need one path to work
     }
 }
