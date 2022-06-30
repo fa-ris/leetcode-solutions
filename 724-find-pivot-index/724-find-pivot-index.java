@@ -1,5 +1,8 @@
 class Solution {
     public int pivotIndex(int[] nums) {
+        if (nums.length == 0) {
+            return -1;
+        }
         int[] arr1 = new int[nums.length];
         int[] arr2 = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
