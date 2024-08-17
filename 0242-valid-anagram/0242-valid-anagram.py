@@ -1,8 +1,9 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        s1, s2 = {}, {}
-        for letter in s:
-            s1[letter] = 1 + s1.get(letter, 0)
-        for letter in t:
-            s2[letter] = 1 + s2.get(letter, 0)
-        return s1 == s2
+        if len(s) != len(t):
+            return False
+        s_map, t_map = {}, {}
+        for i in range(len(s)):
+            s_map[s[i]] = 1 + s_map.get(s[i], 0)
+            t_map[t[i]] = 1 + t_map.get(t[i], 0)
+        return s_map == t_map
